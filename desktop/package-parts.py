@@ -11,6 +11,6 @@ folder=root.parent/'public/downloads';folder.mkdir(parents=True,exist_ok=True)
 parts=[]
 for i,offset in enumerate(range(0,len(blob),8*1024*1024),1):
  body=blob[offset:offset+8*1024*1024];name=f'MailAI.part{i}';(folder/name).write_bytes(body);parts.append({'name':name,'bytes':len(body),'sha256':hashlib.sha256(body).hexdigest()})
-manifest={'version':'1.5.1','format':'connect-first-installer','name':'MailAI-Setup.exe','bytes':len(blob),'sha256':hashlib.sha256(blob).hexdigest(),'crc32':zlib.crc32(blob)&0xffffffff,'parts':parts}
+manifest={'version':'1.5.2','format':'connect-first-installer','name':'MailAI-Setup.exe','bytes':len(blob),'sha256':hashlib.sha256(blob).hexdigest(),'crc32':zlib.crc32(blob)&0xffffffff,'parts':parts}
 (folder/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
 print(json.dumps(manifest,indent=2))
