@@ -19,6 +19,6 @@ def main():
  for old in PUBLIC.glob('MailAI.part*'):old.unlink()
  for at in range(0,len(blob),chunk_size):
   content=blob[at:at+chunk_size];name='MailAI.part'+str(at//chunk_size+1);(PUBLIC/name).write_bytes(content);parts.append({'name':name,'bytes':len(content),'sha256':hashlib.sha256(content).hexdigest()})
- manifest={'version':'1.5.0','format':'connect-first-installer','name':'MailAI-Setup.exe','bytes':len(blob),'sha256':hashlib.sha256(blob).hexdigest(),'crc32':zlib.crc32(blob)&0xffffffff,'parts':parts}
+ manifest={'version':'1.5.1','format':'connect-first-installer','name':'MailAI-Setup.exe','bytes':len(blob),'sha256':hashlib.sha256(blob).hexdigest(),'crc32':zlib.crc32(blob)&0xffffffff,'parts':parts}
  (PUBLIC/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n');print(json.dumps(manifest,indent=2))
 if __name__=='__main__':main()

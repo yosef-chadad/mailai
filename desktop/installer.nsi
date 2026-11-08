@@ -1,6 +1,6 @@
 Unicode true
 !include "MUI2.nsh"
-!define VERSION "1.5.0"
+!define VERSION "1.5.1"
 Name "MailAI"
 OutFile "build\MailAI-Setup.exe"
 InstallDir "$LOCALAPPDATA\MailAI\App-${VERSION}"
@@ -9,12 +9,12 @@ SetCompressor /SOLID zlib
 CRCCheck force
 ShowInstDetails show
 BrandingText "!Yos | MailAI ${VERSION}"
-VIProductVersion "1.5.0.0"
+VIProductVersion "1.5.1.0"
 VIAddVersionKey "ProductName" "MailAI"
 VIAddVersionKey "CompanyName" "!Yos"
 VIAddVersionKey "FileDescription" "MailAI setup"
-VIAddVersionKey "FileVersion" "1.5.0.0"
-VIAddVersionKey "ProductVersion" "1.5.0"
+VIAddVersionKey "FileVersion" "1.5.1.0"
+VIAddVersionKey "ProductVersion" "1.5.1"
 VIAddVersionKey "LegalCopyright" "!Yos"
 !define MUI_ICON "icon.ico"
 !define MUI_UNICON "icon.ico"
