@@ -1,0 +1,8 @@
+node_modules/
+dist/
+public/downloads/
+desktop/payload/
+desktop/build/
+layout-screenshots/
+__pycache__/
+*.pyc
