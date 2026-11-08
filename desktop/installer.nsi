@@ -2,7 +2,7 @@ Unicode true
 !include "MUI2.nsh"
 !define VERSION "1.5.0"
 Name "MailAI"
-OutFile "build/MailAI-Setup.exe"
+OutFile "build\MailAI-Setup.exe"
 InstallDir "$LOCALAPPDATA\MailAI\App-${VERSION}"
 RequestExecutionLevel user
 SetCompressor /SOLID zlib
@@ -33,14 +33,14 @@ Function .onInit
  ready:
  InitPluginsDir
  SetOutPath "$PLUGINSDIR\App"
- File "build/MailAI.exe"
+ File "build\MailAI.exe"
  File "MailAI.exe.config"
  File "mailai.py"
  File "bot.py"
  File "thread_guard.py"
  File "web_reader.py"
  SetOutPath "$PLUGINSDIR\App\python"
- File /r "payload/python/*"
+ File /r "payload\python\*"
  CreateDirectory "$PLUGINSDIR\Data"
  System::Call 'kernel32::SetEnvironmentVariableW(w "MAILAI_DATA",w "$PLUGINSDIR\Data")'
  System::Call 'kernel32::SetEnvironmentVariableW(w "MAILAI_SETUP_STAGE",w "1")'
